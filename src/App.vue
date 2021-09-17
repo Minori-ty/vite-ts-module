@@ -1,5 +1,5 @@
 <template>
-    <h1>App</h1>
+    <!-- <h1>App</h1> -->
     <About :TitleInfo="{ value: 'ss', color: 'red' }"></About>
     <!-- <div>{{ $store.state.counter }}</div> -->
     <router-view></router-view>
@@ -19,7 +19,6 @@ request
     .then(res => {
         console.log(res.data)
     })
-var a
 </script>
 
 <style scoped></style>

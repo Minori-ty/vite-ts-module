@@ -8,13 +8,6 @@
         "lint": "eslint \"src/**/*.{js,vue}\"",
         "prepare": "husky install"
     },
-    "gitHooks": {
-        "pre-commit": "lint-staged",
-        "pre-push": "lint-staged"
-    },
-    "lint-staged": {
-        "*.{ts,vue}": "eslint"
-    },
     "dependencies": {
         "axios": "^0.21.4",
         "vue": "^3.2.11",

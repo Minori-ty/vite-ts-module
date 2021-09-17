@@ -1,5 +1,5 @@
 export interface Data {
     config: any
-    data: object
+    data: []
     headers: any
 }
