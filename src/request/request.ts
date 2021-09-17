@@ -23,20 +23,20 @@ class Request {
         )
 
         this.instance.interceptors.request.use(
-            (config) => {
+            config => {
                 console.log('不会被覆盖的拦截器')
                 return config
             },
-            (error) => {
+            error => {
                 return error
             }
         )
 
         this.instance.interceptors.response.use(
-            (config) => {
+            config => {
                 return config
             },
-            (error) => {
+            error => {
                 return error
             }
         )
@@ -46,10 +46,10 @@ class Request {
         return new Promise((resolve, reject) => {
             this.instance
                 .request<any, T>(config)
-                .then((res) => {
+                .then(res => {
                     resolve(res)
                 })
-                .catch((error) => {
+                .catch(error => {
                     reject(error)
                 })
         })

@@ -13,8 +13,7 @@
         "pre-push": "lint-staged"
     },
     "lint-staged": {
-        "*.{js,vue}": "eslint",
-        "*.js": "eslint --cache --fix"
+        "*.{ts,vue}": "eslint"
     },
     "dependencies": {
         "axios": "^0.21.4",
