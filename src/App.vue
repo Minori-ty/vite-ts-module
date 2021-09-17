@@ -1,5 +1,5 @@
 <template>
-    <!-- <h1>组件</h1> -->
+    <h1>App</h1>
     <About :TitleInfo="{ value: 'ss', color: 'red' }"></About>
     <!-- <div>{{ $store.state.counter }}</div> -->
     <router-view></router-view>
@@ -7,7 +7,19 @@
 
 <script setup lang="ts">
 import About from './components/About.vue'
-import.meta.env.VITE_BASE_URL
+import request from './request'
+import type { Data } from './request/data.d'
+// import.meta.env.VITE_BASE_URL
+console.log(import.meta.env.VITE_BASE_URL)
+request
+    .post<Data>({
+        url: '/api/post',
+        method: 'get',
+    })
+    .then(res => {
+        console.log(res.data)
+    })
+var a
 </script>
 
 <style scoped></style>
