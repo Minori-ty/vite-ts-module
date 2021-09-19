@@ -19,6 +19,11 @@ const router = createRouter({
             component: () => import('../components/About.vue'),
             hidden: false,
         },
+        {
+            path: '/:pathMatch(.*)*',
+            component: () => import('../components/404.vue'),
+            hidden: false,
+        },
     ] as RouteRecordRaw[],
 })
 

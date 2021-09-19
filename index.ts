@@ -1,14 +1,3 @@
-interface Todo<T> {
-    age: T
-}
-const obj: Todo<number> = {
-    age: 1,
-}
-console.log(obj)
-
-class P {
-    M<T>(config: Todo<T>): Todo<T> {
-        return config
-    }
-}
-console.log(P)
+const arr = [2, 2, 3, 1, 5, 3, 2, 1]
+const b = [...new Set(arr)]
+console.log(b)

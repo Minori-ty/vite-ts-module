@@ -8,9 +8,18 @@ const Request = new Requests({
             console.log('请求成功拦截')
             return config
         },
-        requestInterceptorCatch: error => error,
-        responseInterceptor: config => config,
-        responseInterceptorCatch: error => error,
+        requestInterceptorCatch: error => {
+            console.log('请求错误')
+            return error
+        },
+        responseInterceptor: config => {
+            console.log('响应拦截成功')
+            return config
+        },
+        responseInterceptorCatch: error => {
+            console.log('响应失败')
+            return error
+        },
     },
 })
 export default Request
