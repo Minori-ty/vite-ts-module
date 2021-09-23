@@ -62,6 +62,9 @@ class Request {
     post<T>(config: AxiosRequestConfig): Promise<T> {
         return this.request<T>({ ...config, method: 'post' })
     }
+    concel(): void {
+        console.log('concel')
+    }
 }
 
 export default Request

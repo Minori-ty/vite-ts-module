@@ -29,15 +29,12 @@ module.exports = {
                 endOfLine: 'auto',
             },
         ],
-        indent: [
-            2,
-            4,
-            {
-                SwitchCase: 1,
-            },
-        ],
+        '@typescript-eslint/indent': ['off'],
     },
     globals: {
         defineProps: 'readonly',
+        defineEmits: 'readonly',
+        defineComponent: 'readonly',
+        defineExpose: 'readonly',
     },
 }

@@ -1,10 +1,5 @@
-const getImgUrl = (name: string): string => {
-    const path = `src/assets/images/${name}`
-    const modules = import.meta.globEager('../assets/images')
-    console.log(1 + path)
-    console.log(modules)
-    return 'xx'
+import emitter from './eventbus'
+import filters from './filters'
+import getImgUrl from './getUrl'
 
-    // return modules[path].default
-}
-export default getImgUrl
+export { emitter, filters, getImgUrl }
