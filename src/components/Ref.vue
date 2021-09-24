@@ -1,17 +1,10 @@
 <template>
-    <h1 ref="h1">ref</h1>
+    <h1>ref</h1>
 </template>
-<script setup lang="ts">
-import { onMounted, ref } from 'vue'
+<script lang="ts" setup>
 const fn = () => {
-    console.log('子组件的方法')
+    console.log('-----------子组件的方法')
 }
-const h1 = ref()
-onMounted(() => {
-    console.log(h1.value)
-})
-</script>
-
-<script lang="ts">
-export default {}
+const count = 0
+defineExpose({ fn, count })
 </script>

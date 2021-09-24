@@ -1,14 +1,9 @@
 import { InjectionKey } from 'vue'
-import { createStore, Store } from 'vuex'
+import { createStore, Store, useStore as baseUseStore } from 'vuex'
 import axiso from 'axios'
-import homeModule from './modules/home'
-
-export interface State {
-    counter: number
-    msg: string
-}
-
-export const key: InjectionKey<Store<State>> = Symbol()
+import { State, InitState } from './index.d'
+import homeModule from './modules/home/home'
+import aboutModule from './modules/about/about'
 
 export default createStore({
     state: {
@@ -44,5 +39,11 @@ export default createStore({
     },
     modules: {
         homeModule,
+        aboutModule,
     },
 })
+
+export const key: InjectionKey<Store<State>> = Symbol('vue-store')
+export function useStore<T = InitState>(): Store<T> {
+    return baseUseStore<T>(key)
+}

@@ -59,10 +59,8 @@ import store from './store.vue'
 import slots from './slots.vue'
 const slotscope = defineAsyncComponent(() => import('./slotscope.vue'))
 
-interface refDom {
-    fn: () => void
-}
-let RefDom = ref<refDom | null>()
+const RefDom = ref<InstanceType<typeof Ref>>()
+
 onMounted(() => {
     console.log(RefDom.value?.fn)
 })
