@@ -30,7 +30,7 @@
 
     <Ref ref="RefDom" />
     <defineEmits @emits="emit" />
-    <defineProps msg="父组件传给子组件的数据" />
+    <defineProps msg="父组件传给子组件的数据" :form="{ age: 20 }" />
     <eventBus />
     <watchEffect />
     <watch />
@@ -59,11 +59,14 @@ import store from './store.vue'
 import slots from './slots.vue'
 const slotscope = defineAsyncComponent(() => import('./slotscope.vue'))
 
-const RefDom = ref<InstanceType<typeof Ref>>()
-
+interface childrenRef {
+    fn: () => void
+}
+const RefDom = ref<childrenRef>()
 onMounted(() => {
     console.log(RefDom.value?.fn)
 })
+
 const $filters =
     getCurrentInstance()?.appContext.config.globalProperties.$filters ?? null
 
@@ -72,11 +75,11 @@ const push = () => {
     arr.value.push(1)
     console.log(arr.value.length)
 }
+
 provide(
     'length',
     computed(() => arr.value.length)
 )
-
 const count = ref(0)
 provide('count', readonly(count))
 const add = () => {
