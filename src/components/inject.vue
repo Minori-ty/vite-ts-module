@@ -5,9 +5,11 @@
 </template>
 
 <script lang="ts" setup>
-import { inject } from 'vue'
-const count = inject('count')
+import { inject, Ref } from 'vue'
+import { countKey } from '../type/inject'
+const count = inject(countKey) as Ref<number>
 const length = inject('length')
+console.log(count.value)
 </script>
 
 <style></style>

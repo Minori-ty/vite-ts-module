@@ -15,15 +15,9 @@ const router = createRouter({
             },
         },
         {
-            path: '/about',
-            component: () => import('../components/About.vue'),
-            hidden: false,
-        },
-        {
             path: '/user',
             component: () => import('../components/user.vue'),
             hidden: false,
-
             children: [
                 {
                     path: '',

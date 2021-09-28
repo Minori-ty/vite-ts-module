@@ -5,10 +5,13 @@
 <script setup lang="ts">
 interface emitType {
     (e: 'emits', data: number): void
+    (e: 'ws', data: string): void
 }
+
 const emits = defineEmits<emitType>()
+
 const emit = () => {
-    emits('emits', 27)
+    emits('ws', '27')
 }
 </script>
 <style></style>

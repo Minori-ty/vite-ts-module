@@ -1,11 +1,11 @@
 import { InjectionKey } from 'vue'
 import { createStore, Store, useStore as baseUseStore } from 'vuex'
 import axiso from 'axios'
-import { State, InitState } from './index.d'
+import { State, Modules } from './index.d'
 import homeModule from './modules/home/home'
 import aboutModule from './modules/about/about'
 
-export default createStore({
+export default createStore<State>({
     state: {
         counter: 10,
         msg: '自定义的msg',
@@ -43,7 +43,8 @@ export default createStore({
     },
 })
 
-export const key: InjectionKey<Store<State>> = Symbol('vue-store')
-export function useStore<T = InitState>(): Store<T> {
+export const key: InjectionKey<Store<Modules>> = Symbol('vue-store')
+
+export function useStore<T = Modules>(): Store<T> {
     return baseUseStore<T>(key)
 }

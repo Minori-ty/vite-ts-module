@@ -1,5 +1,4 @@
 <template>
-    <vnode />
     <store />
     <router-link to="/user">user</router-link>
     <h1>{{ $filters.FormDate() }}</h1>
@@ -28,9 +27,9 @@
         </template>
     </slots>
 
-    <Ref ref="RefDom" />
+    <Son ref="RefDom" />
     <defineEmits @emits="emit" />
-    <defineProps msg="父组件传给子组件的数据" :form="{ age: 20 }" />
+    <defineProps msg="父组件传给子组件的数据" :form="{ age: 12 }" />
     <eventBus />
     <watchEffect />
     <watch />
@@ -39,7 +38,6 @@
 <script lang="ts" setup>
 import {
     ref,
-    getCurrentInstance,
     provide,
     computed,
     onMounted,
@@ -48,27 +46,27 @@ import {
 } from 'vue'
 import emitter from '../utils/eventbus'
 import inject from './inject.vue'
-import Ref from './Ref.vue'
+import Son from './Ref.vue'
 import defineEmits from './defineEmits.vue'
 import defineProps from './defineProps.vue'
 import eventBus from './eventBus.vue'
 import watchEffect from './watchEffect.vue'
 import watch from './watch.vue'
-import vnode from './Vnode.vue'
 import store from './store.vue'
 import slots from './slots.vue'
+// import axios from 'axios'
 const slotscope = defineAsyncComponent(() => import('./slotscope.vue'))
 
-interface childrenRef {
+interface sonData {
     fn: () => void
+    count: number
 }
-const RefDom = ref<childrenRef>()
-onMounted(() => {
-    console.log(RefDom.value?.fn)
-})
 
-const $filters =
-    getCurrentInstance()?.appContext.config.globalProperties.$filters ?? null
+const sonRef = ref<InstanceType<typeof Son> & sonData>()
+
+onMounted(() => {
+    console.log(sonRef.value?.$el)
+})
 
 var arr = ref([1, 2, 3, 4])
 const push = () => {
@@ -76,12 +74,15 @@ const push = () => {
     console.log(arr.value.length)
 }
 
+import { countKey } from '../type/inject'
+
 provide(
     'length',
     computed(() => arr.value.length)
 )
-const count = ref(0)
-provide('count', readonly(count))
+const count = ref<number>(0)
+provide(countKey, readonly(count))
+
 const add = () => {
     count.value++
 }

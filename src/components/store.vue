@@ -2,18 +2,20 @@
     <h1>store</h1>
     <h2>{{ aboutModule }}</h2>
     <h1>{{ counter }}</h1>
+    <h1>{{ $store.state.homeModule }}</h1>
     <button @click="dispatch">dispatch++</button>
     <button @click="commit">commit++</button>
 </template>
 <script setup lang="ts">
-// import { useStore } from 'vuex'
-// import { key, InitState } from '../store'
-// const store = useStore<InitState>(key)
+import { useStore } from 'vuex'
+import { key } from '../store'
+import { Modules } from '../store/index.d'
+const store = useStore<Modules>(key)
 
 //useStore不再从vuex中导入，而是使用自己构建的新的useStore函数
 import { computed } from 'vue'
-import { useStore } from '../store'
-const store = useStore()
+// import { useStore } from '../store'
+// const store = useStore()
 const dispatch = () => {
     const res = store.dispatch('request')
     res.then(res => {
@@ -30,4 +32,3 @@ const commit = () => {
 const aboutModule = computed((): string => store.state.aboutModule.about)
 const counter = computed((): number => store.state.counter)
 </script>
-<style></style>
