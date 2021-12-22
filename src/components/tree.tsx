@@ -7,6 +7,7 @@ export default defineComponent({
     },
     setup() {
         const n = ref('999')
+        const a = 1
         return () => (
             <>
                 <home />

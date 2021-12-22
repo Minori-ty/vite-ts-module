@@ -17,18 +17,8 @@ module.exports = {
         sourceType: 'module',
     },
     rules: {
-        'no-console': process.env.NODE_ENV === 'production' ? 'warn' : 'off',
-        'no-debugger': process.env.NODE_ENV === 'production' ? 'warn' : 'off',
         '@typescript-eslint/no-explicit-any': ['off'],
-        'prettier/prettier': [
-            'warn',
-            {
-                singleQute: true,
-                semi: false,
-                // trailingComma:'es5',
-                endOfLine: 'auto',
-            },
-        ],
+        'prettier/prettier': 'error',
         '@typescript-eslint/indent': ['off'],
     },
     globals: {
