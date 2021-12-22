@@ -7,19 +7,20 @@ module.exports = {
     },
     extends: [
         'plugin:vue/vue3-essential',
-        '@vue/prettier',
         'eslint:recommended',
         '@vue/typescript/recommended',
-        '@vue/prettier/@typescript-eslint',
+        '@vue/prettier',
+        // '@vue/prettier/@typescript-eslint',
     ],
     parserOptions: {
         ecmaVersion: 2020,
         sourceType: 'module',
     },
     rules: {
-        '@typescript-eslint/no-explicit-any': ['off'],
         'prettier/prettier': 'error',
+        '@typescript-eslint/no-explicit-any': ['off'],
         '@typescript-eslint/indent': ['off'],
+        '@typescript-eslint/no-unused-vars': ['error'],
     },
     globals: {
         defineProps: 'readonly',
