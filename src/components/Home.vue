@@ -1,4 +1,5 @@
 <template>
+    <pinia />
     <store />
     <router-link to="/user">user</router-link>
     <h1>{{ $filters.FormDate() }}</h1>
@@ -54,6 +55,7 @@ import watchEffect from './watchEffect.vue'
 import watch from './watch.vue'
 import store from './store.vue'
 import slots from './slots.vue'
+import pinia from './pinia.vue'
 // import axios from 'axios'
 const slotscope = defineAsyncComponent(() => import('./slotscope.vue'))
 
