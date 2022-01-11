@@ -2,6 +2,7 @@ import { defineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
 import vueJsx from '@vitejs/plugin-vue-jsx'
 import { viteMockServe } from 'vite-plugin-mock'
+import test from './src/plugins/vite-plugin-test'
 
 // https://vitejs.dev/config/
 export default defineConfig({
@@ -12,15 +13,13 @@ export default defineConfig({
         viteMockServe({
             mockPath: 'mock',
         }),
+        // test,
     ],
-    // server: {
-    //     proxy: {
-    //         '/api': {
-    //             target: 'http://www.baidu.com',
-    //             rewrite: (path) => path.replace(/^\/api/, ''),
-    //         },
-    //     },
-    // },
+    resolve: {
+        alias: {
+            '@': './src',
+        },
+    },
     build: {
         terserOptions: {
             compress: {
@@ -41,4 +40,12 @@ export default defineConfig({
             },
         },
     },
+    // server: {
+    //     proxy: {
+    //         '/api': {
+    //             target: 'http://api.help.bj.cn/apis/weather/?id=101270101',
+    //             rewrite: path => path.replace(/^\/api/, ''),
+    //         },
+    //     },
+    // },
 })

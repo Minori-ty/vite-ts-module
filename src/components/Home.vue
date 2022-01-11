@@ -96,4 +96,11 @@ const evebtbus = () => {
 const emit = (data: number) => {
     console.log('接收到了子组件传过来的数据', data)
 }
+
+import axios from 'axios'
+async function fn() {
+    const data = await axios.get('/api/get')
+    console.log(data)
+}
+fn()
 </script>
