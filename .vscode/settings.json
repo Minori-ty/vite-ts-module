@@ -56,14 +56,6 @@
     "workbench.startupEditor": "newUntitledFile",
     "liveServer.settings.donotShowInfoMsg": true,
     "workbench.sideBar.location": "right",
-    "terminal.integrated.profiles.windows": {
-        "Git-Bash": {
-            "path": "E:/software/Git/bin/bash.exe",
-            // "path": "C:/Users/15638/AppData/Local/Microsoft/WindowsApps/ubuntu.exe",
-            "args": []
-        }
-    },
-    "terminal.integrated.defaultProfile.windows": "Git-Bash",
     "editor.fontFamily": "Fira Code",
     "editor.fontLigatures": true,
     "bracketPairColorizer.activeScopeCSS": [

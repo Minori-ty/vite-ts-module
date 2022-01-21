@@ -13,7 +13,7 @@ export default defineConfig({
         viteMockServe({
             mockPath: 'mock',
         }),
-        // test,
+        test,
     ],
     resolve: {
         alias: {
