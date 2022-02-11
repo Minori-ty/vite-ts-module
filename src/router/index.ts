@@ -38,7 +38,7 @@ const router = createRouter({
             component: () => import('../components/404.vue'),
             hidden: false,
         },
-    ] as RouteRecordRaw[],
+    ] as AppRouteRecordRaw[],
 })
 
 router.beforeEach((to, from, next) => {

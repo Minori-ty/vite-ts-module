@@ -29,14 +29,13 @@ export default defineConfig({
             },
         },
         // 取消计算文件大小，加快打包速度
-        brotliSize: false,
+        reportCompressedSize: false,
         sourcemap: true,
-        assetsDir: 'static/img',
         rollupOptions: {
             output: {
-                chunkFileNames: 'static/js/[name]-[hash].js',
-                entryFileNames: 'static/js/[name]-[hash].js',
-                assetFileNames: 'static/[ext]/[name]-[hash].[ext]',
+                chunkFileNames: 'js/[name]-[hash].js',
+                entryFileNames: 'js/[name]-[hash].js',
+                assetFileNames: '[ext]/[name]-[hash].[ext]',
             },
         },
     },
