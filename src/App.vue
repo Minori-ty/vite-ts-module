@@ -22,5 +22,6 @@ import cs from './assets/css/App.module.css'
 $color: red;
 .mo {
     color: $color;
+    width: 200px;
 }
 </style>
