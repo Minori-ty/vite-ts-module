@@ -32,7 +32,7 @@
     <defineEmits @emits="emit" />
     <defineProps
         msg="父组件传给子组件的数据"
-        :form="{ age: 24, name: 'vue' }"
+        :form="{ name: 'vue', age: 88 }"
     />
     <eventBus />
     <watchEffect />

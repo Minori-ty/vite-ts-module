@@ -18,11 +18,17 @@ interface Props {
 
 interface Form {
     name: string
-    age: number
+    age?: number
 }
 
 withDefaults(defineProps<Props>(), {
     vue: 'defineProps的默认值',
+    form: () => {
+        return {
+            name: '',
+            age: 78,
+        }
+    },
 })
 // console.log(props)
 
