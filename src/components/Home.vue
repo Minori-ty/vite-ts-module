@@ -30,7 +30,10 @@
 
     <Son ref="RefDom" />
     <defineEmits @emits="emit" />
-    <defineProps msg="父组件传给子组件的数据" :form="{ age: 12 }" />
+    <defineProps
+        msg="父组件传给子组件的数据"
+        :form="{ age: 24, name: 'vue' }"
+    />
     <eventBus />
     <watchEffect />
     <watch />
@@ -56,6 +59,8 @@ import watch from './watch.vue'
 import store from './store.vue'
 import slots from './slots.vue'
 import pinia from './pinia.vue'
+import axios from 'axios'
+import { countKey } from '../type/inject'
 // import axios from 'axios'
 const slotscope = defineAsyncComponent(() => import('./slotscope.vue'))
 
@@ -76,8 +81,6 @@ const push = () => {
     console.log(arr.value.length)
 }
 
-import { countKey } from '../type/inject'
-
 provide(
     'length',
     computed(() => arr.value.length)
@@ -97,7 +100,6 @@ const emit = (data: number) => {
     console.log('接收到了子组件传过来的数据', data)
 }
 
-import axios from 'axios'
 async function fn() {
     const data = await axios.get('/api/get')
     console.log(data)

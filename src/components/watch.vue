@@ -1,6 +1,8 @@
 <template>
-    <h1>watch</h1>
-    <button @click="fn">改变reactive的值</button>
+    <div class="box">
+        <h1>watch</h1>
+        <button @click="fn">改变reactive的值</button>
+    </div>
 </template>
 <script setup lang="ts">
 import { reactive, watch } from 'vue'

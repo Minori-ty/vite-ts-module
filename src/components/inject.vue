@@ -1,7 +1,9 @@
 <template>
-    <h1>inject</h1>
-    <h2>{{ count }}</h2>
-    <h2>{{ length }}</h2>
+    <div class="box">
+        <h1>inject</h1>
+        <h2>{{ count }}</h2>
+        <h2>{{ length }}</h2>
+    </div>
 </template>
 
 <script lang="ts" setup>

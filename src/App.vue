@@ -1,10 +1,10 @@
 <template>
-    <div :class="$style.mo">module-style</div>
-    <div :class="cs.ss">class-module-style</div>
+    <div :class="$style.wrap">module-style</div>
+    <div :class="AppStyle.ss">class-module-style</div>
     <router-view></router-view>
 </template>
 <script lang="ts" setup>
-import cs from './assets/css/App.module.css'
+import AppStyle from './assets/css/App.module.css'
 </script>
 <!-- <i18n>
 {
@@ -20,7 +20,7 @@ import cs from './assets/css/App.module.css'
 </i18n> -->
 <style module lang="scss">
 $color: red;
-.mo {
+.wrap {
     color: $color;
     width: 200px;
 }

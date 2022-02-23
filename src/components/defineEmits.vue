@@ -1,6 +1,8 @@
 <template>
-    <h1>defineEmits</h1>
-    <button @click="emit">defineEmits</button>
+    <div class="box">
+        <h1>defineEmits</h1>
+        <button @click="emit">defineEmits</button>
+    </div>
 </template>
 <script setup lang="ts">
 interface emitType {

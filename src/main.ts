@@ -5,6 +5,7 @@ import router from './router'
 import './hooks/useRequest'
 import filter from './utils/filters'
 import { createPinia } from 'pinia'
+import './assets/css/global.css'
 
 createApp(App)
     .use(store, key)

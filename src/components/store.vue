@@ -1,19 +1,22 @@
 <template>
-    <h1>store</h1>
-    <h2>{{ aboutModule }}</h2>
-    <h1>{{ counter }}</h1>
-    <h1>{{ $store.state.homeModule }}</h1>
-    <button @click="dispatch">dispatch++</button>
-    <button @click="commit">commit++</button>
+    <div class="box">
+        <h1>store</h1>
+        <h2>{{ aboutModule }}</h2>
+        <h1>{{ counter }}</h1>
+        <h1>{{ $store.state.homeModule }}</h1>
+        <button @click="dispatch">dispatch++</button>
+        <button @click="commit">commit++</button>
+    </div>
 </template>
 <script setup lang="ts">
 import { useStore } from 'vuex'
 import { key } from '../store'
 import { Modules } from '../store/index.d'
+import { computed } from 'vue'
 const store = useStore<Modules>(key)
 
 //useStore不再从vuex中导入，而是使用自己构建的新的useStore函数
-import { computed } from 'vue'
+
 // import { useStore } from '../store'
 // const store = useStore()
 const dispatch = () => {

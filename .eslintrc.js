@@ -21,11 +21,13 @@ module.exports = {
         '@typescript-eslint/no-explicit-any': ['off'],
         '@typescript-eslint/indent': ['off'],
         '@typescript-eslint/no-unused-vars': ['error'],
+        'vue/multi-word-component-names': ['off'],
     },
     globals: {
         defineProps: 'readonly',
         defineEmits: 'readonly',
         defineComponent: 'readonly',
         defineExpose: 'readonly',
+        withDefaults: 'readonly',
     },
 }
