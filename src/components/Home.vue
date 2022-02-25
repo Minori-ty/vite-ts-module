@@ -28,6 +28,15 @@
         </template>
     </slots>
 
+    <Test :tableData="a" :propList="propList">
+        <template #name="scope">
+            <el-button type="primary">{{ scope.row.name }}</el-button>
+        </template>
+        <template #date="scope">
+            <el-button type="primary">{{ scope.row.date }}</el-button>
+        </template>
+    </Test>
+
     <Son ref="RefDom" />
     <defineEmits @emits="emit" />
     <defineProps
@@ -58,6 +67,7 @@ import watchEffect from './watchEffect.vue'
 import watch from './watch.vue'
 import store from './store.vue'
 import slots from './slots.vue'
+import Test from './动态插槽.vue'
 import pinia from './pinia.vue'
 import axios from 'axios'
 import { countKey } from '../type/inject'
@@ -105,4 +115,45 @@ async function fn() {
     console.log(data)
 }
 fn()
+
+const a = [
+    {
+        date: '2016-05-03',
+        name: 'Tom',
+        address: 'No. 189, Grove St, Los Angeles',
+    },
+    {
+        date: '2016-05-02',
+        name: 'Jack',
+        address: 'No. 189, Grove St, Los Angeles',
+    },
+    {
+        date: '2016-05-04',
+        name: 'Tem',
+        address: 'No. 189, Grove St, Los Angeles',
+    },
+    {
+        date: '2016-05-01',
+        name: 'Eva',
+        address: 'No. 189, Grove St, Los Angeles',
+    },
+]
+
+const propList = [
+    {
+        prop: 'date',
+        label: 'Date',
+        slotName: 'date',
+    },
+    {
+        prop: 'name',
+        label: 'Name',
+        slotName: 'name',
+    },
+    {
+        prop: 'address',
+        label: 'Address',
+        slotName: 'address',
+    },
+]
 </script>
