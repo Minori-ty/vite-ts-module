@@ -28,15 +28,24 @@
         </template>
     </slots>
 
-    <Test :tableData="tableData" :propList="propList">
-        <template #name="scope">
-            <el-button type="primary">{{ scope.row.name }}</el-button>
-        </template>
-        <template #date="scope">
-            <el-button type="primary">{{ scope.row.date }}</el-button>
-        </template>
-    </Test>
+    <div class="box">
+        <Test :tableData="tableData" :propList="propList">
+            <template #date="scope">
+                <el-button type="success">{{ scope.row.date }}</el-button>
+            </template>
+            <template #name="scope">
+                <el-button type="primary">{{ scope.row.name }}</el-button>
+            </template>
+        </Test>
+    </div>
 
+    <div class="box">
+        <Table :data="tableData" :tableTitle="propList">
+            <template #name="{ value }">
+                <el-button type="primary">{{ value }}</el-button>
+            </template>
+        </Table>
+    </div>
     <Son ref="RefDom" />
     <defineEmits @emits="emit" />
     <defineProps
@@ -68,10 +77,12 @@ import watch from './watch.vue'
 import store from './store.vue'
 import slots from './slots.vue'
 import Test from './dynamicSlot.vue'
+import Table from './自己封装的动态插槽.vue'
 import pinia from './pinia.vue'
 import axios from 'axios'
 import { countKey } from '../type/inject'
 // import axios from 'axios'
+
 const slotscope = defineAsyncComponent(() => import('./slotscope.vue'))
 
 interface sonData {

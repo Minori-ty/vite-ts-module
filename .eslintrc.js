@@ -29,5 +29,6 @@ module.exports = {
         defineComponent: 'readonly',
         defineExpose: 'readonly',
         withDefaults: 'readonly',
+        TableType: 'readonly',
     },
 }
