@@ -3,6 +3,9 @@
         <cssModule></cssModule>
     </div>
     <div class="box">
+        <tree></tree>
+    </div>
+    <div class="box">
         <pinia />
     </div>
     <div class="box">
@@ -101,6 +104,7 @@ import watchEffect from './watchEffect.vue'
 import watch from './watch.vue'
 import store from './store.vue'
 import slots from './slots.vue'
+import tree from './tree'
 import Test from './dynamicSlot.vue'
 import Table from './自己封装的动态插槽.vue'
 import pinia from './pinia.vue'

@@ -1,12 +1,13 @@
 import { defineComponent } from 'vue'
 export default defineComponent({
-    name: 'home',
+    name: 'color',
     setup() {
         const a = 1
         return () => (
             <>
-                <h1>home</h1>
+                <h1>tsx-color</h1>
                 <h2 style="color:red">style</h2>
+                <h3>{a}</h3>
             </>
         )
     },
