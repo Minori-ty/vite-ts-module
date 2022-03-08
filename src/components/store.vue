@@ -1,12 +1,10 @@
 <template>
-    <div class="box">
-        <h1>store</h1>
-        <h2>{{ aboutModule }}</h2>
-        <h1>{{ counter }}</h1>
-        <h1>{{ $store.state.homeModule }}</h1>
-        <button @click="dispatch">dispatch++</button>
-        <button @click="commit">commit++</button>
-    </div>
+    <h1>store</h1>
+    <h2>{{ aboutModule }}</h2>
+    <h1>{{ counter }}</h1>
+    <h1>{{ $store.state.homeModule }}</h1>
+    <button @click="dispatch">dispatch++</button>
+    <button @click="commit">commit++</button>
 </template>
 <script setup lang="ts">
 import { useStore } from 'vuex'

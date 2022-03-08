@@ -15,7 +15,7 @@ export default defineComponent({
                 <h2>{n.value}</h2>
                 <article>
                     <section>
-                        <p>你好</p>
+                        <p>{a}</p>
                     </section>
                 </article>
             </>

@@ -1,11 +1,9 @@
 <template>
-    <div class="box">
-        <h1>count:{{ count }}</h1>
-        <h1>computed:{{ computed }}</h1>
-        <h2>{{ url }}</h2>
-        <button @click="fn">add</button>
-        <button @click="actions">actions</button>
-    </div>
+    <h1>count:{{ count }}</h1>
+    <h1>computed:{{ computed }}</h1>
+    <h2>{{ url }}</h2>
+    <button @click="fn">add</button>
+    <button @click="actions">actions</button>
 </template>
 
 <script setup lang="ts">

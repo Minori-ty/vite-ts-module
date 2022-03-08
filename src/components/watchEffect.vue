@@ -1,9 +1,7 @@
 <template>
-    <div class="box">
-        <h1>watchEffect</h1>
-        <h2>{{ age }}</h2>
-        <button @click="add">+1</button>
-    </div>
+    <h1>watchEffect</h1>
+    <h2>{{ age }}</h2>
+    <button @click="add">+1</button>
 </template>
 <script setup lang="ts">
 import { ref, watchEffect } from 'vue'

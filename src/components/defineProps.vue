@@ -1,12 +1,10 @@
 <template>
-    <div class="box">
-        <h1>defineProps</h1>
-        <h2>{{ msg }}</h2>
-        <h2>{{ vue }}</h2>
-        <h2>
-            {{ `from: name: ${form.name} ---- age: ${form?.age}` }}
-        </h2>
-    </div>
+    <h1>defineProps</h1>
+    <h2>{{ msg }}</h2>
+    <h2>{{ vue }}</h2>
+    <h2>
+        {{ `from: name: ${form.name} ---- age: ${form?.age}` }}
+    </h2>
 </template>
 <script setup lang="ts">
 // import { PropType } from 'vue'
