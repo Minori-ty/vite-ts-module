@@ -28,7 +28,7 @@
         </template>
     </slots>
 
-    <Test :tableData="a" :propList="propList">
+    <Test :tableData="tableData" :propList="propList">
         <template #name="scope">
             <el-button type="primary">{{ scope.row.name }}</el-button>
         </template>
@@ -67,7 +67,7 @@ import watchEffect from './watchEffect.vue'
 import watch from './watch.vue'
 import store from './store.vue'
 import slots from './slots.vue'
-import Test from './动态插槽.vue'
+import Test from './dynamicSlot.vue'
 import pinia from './pinia.vue'
 import axios from 'axios'
 import { countKey } from '../type/inject'
@@ -85,7 +85,7 @@ onMounted(() => {
     console.log(sonRef.value?.$el)
 })
 
-var arr = ref([1, 2, 3, 4])
+var arr = ref([1, 2, 3, 4, 5, 6])
 const push = () => {
     arr.value.push(1)
     console.log(arr.value.length)
@@ -115,8 +115,8 @@ async function fn() {
     console.log(data)
 }
 fn()
-
-const a = [
+type data = { date: string; name: string; address: string }[]
+const tableData: data = [
     {
         date: '2016-05-03',
         name: 'Tom',
@@ -137,9 +137,23 @@ const a = [
         name: 'Eva',
         address: 'No. 189, Grove St, Los Angeles',
     },
+    {
+        date: '2016-05-01',
+        name: 'Eva',
+        address: 'No. 189, Grove St, Los Angeles',
+    },
+    {
+        date: '2016-05-01',
+        name: 'Eva',
+        address: 'No. 189, Grove St, Los Angeles',
+    },
 ]
 
-const propList = [
+const propList: {
+    prop: 'date' | 'name' | 'address'
+    label: string
+    slotName: string
+}[] = [
     {
         prop: 'date',
         label: 'Date',

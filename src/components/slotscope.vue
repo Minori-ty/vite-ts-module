@@ -7,15 +7,20 @@
     </div>
 </template>
 <script setup lang="ts">
-defineProps({
-    left: {
-        type: String,
-    },
-    right: {
-        type: String,
-    },
-    arr: {
-        type: Array,
-    },
-})
+// defineProps({
+//     left: {
+//         type: String,
+//     },
+//     right: {
+//         type: String,
+//     },
+//     arr: {
+//         type: Array,
+//     },
+// })
+defineProps<{
+    arr: number[]
+    right?: string
+    left?: string
+}>()
 </script>

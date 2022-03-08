@@ -1,6 +1,7 @@
 <template>
     <!-- tableDate是传给el-table组件的属性 -->
     <!-- propList已经在definedProps中声明了,所以可以直接使用 -->
+    <h1>动态插槽</h1>
     <el-table :data="tableData" style="width: 100%">
         <template v-for="propItem in propList" :key="propItem.prop">
             <el-table-column
@@ -8,9 +9,9 @@
                 :label="propItem.label"
                 width="180"
             >
-                <template #default="scope">
-                    <slot :name="propItem.slotName" :row="scope.row">
-                        {{ scope.row[propItem.prop] }}
+                <template #default="{ row }">
+                    <slot :name="propItem.slotName" :row="row">
+                        {{ row[propItem.prop] }}
                     </slot>
                 </template>
             </el-table-column>
