@@ -45,14 +45,14 @@
     </div>
 
     <div class="box">
-        <Test :tableData="tableData" :propList="propList">
+        <dynamicSlot :tableData="tableData" :propList="propList">
             <template #date="scope">
                 <el-button type="success">{{ scope.row.date }}</el-button>
             </template>
             <template #name="scope">
                 <el-button type="primary">{{ scope.row.name }}</el-button>
             </template>
-        </Test>
+        </dynamicSlot>
     </div>
 
     <div class="box">
@@ -105,7 +105,7 @@ import watch from './watch.vue'
 import store from './store.vue'
 import slots from './slots.vue'
 import tree from './tree'
-import Test from './dynamicSlot.vue'
+import dynamicSlot from './dynamicSlot.vue'
 import Table from './自己封装的动态插槽.vue'
 import pinia from './pinia.vue'
 import cssModule from './css-module.vue'

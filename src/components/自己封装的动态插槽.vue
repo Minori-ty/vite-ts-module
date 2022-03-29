@@ -38,7 +38,7 @@ table {
     width: 100%;
     thead {
         th {
-            background-color: gold;
+            background-color: skyblue;
             color: #fff;
             padding: 20px 10px;
         }

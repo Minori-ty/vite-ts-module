@@ -1,6 +1,6 @@
 <template>
     <h1>defineEmits</h1>
-    <button @click="emit">defineEmits</button>
+    <button @click="fn">defineEmits</button>
 </template>
 <script setup lang="ts">
 interface emitType {
@@ -10,7 +10,7 @@ interface emitType {
 
 const emits = defineEmits<emitType>()
 
-const emit = () => {
+const fn = () => {
     emits('ws', '27')
 }
 </script>
