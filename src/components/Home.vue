@@ -83,6 +83,9 @@
     <div class="box">
         <watch />
     </div>
+    <div class="box">
+        <updateModel :count="num" @update:count="num = $event"></updateModel>
+    </div>
 </template>
 
 <script lang="ts" setup>
@@ -96,7 +99,7 @@ import {
 } from 'vue'
 import emitter from '../utils/eventbus'
 import inject from './inject.vue'
-import Son from './Ref.vue'
+import Son, { RefType } from './Ref.vue'
 import defineEmits from './defineEmits.vue'
 import defineProps from './defineProps.vue'
 import eventBus from './eventBus.vue'
@@ -112,18 +115,17 @@ import cssModule from './css-module.vue'
 import axios from 'axios'
 import { countKey } from '../type/inject'
 import Mock from 'mockjs'
+import updateModel from './updateModel.vue'
 
 const slotscope = defineAsyncComponent(() => import('./slotscope.vue'))
 
-interface sonData {
-    fn: () => void
-    count: number
-}
+let num = ref(1)
 
-const sonRef = ref<InstanceType<typeof Son> & sonData>()
+const sonRef = ref<InstanceType<typeof Son> & RefType>()
 
 onMounted(() => {
     console.log(sonRef.value?.$el)
+    sonRef.value?.fn()
 })
 
 var arr = ref([1, 2, 3, 4, 5, 6])
