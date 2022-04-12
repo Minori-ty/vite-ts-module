@@ -66,12 +66,13 @@
         <Son ref="RefDom" />
     </div>
     <div class="box">
-        <defineEmits @emits="emit" />
+        <defineEmits @emits="fatherFn" />
     </div>
     <div class="box">
         <defineProps
             msg="父组件传给子组件的数据"
             :form="{ name: 'vue', age: 88 }"
+            :emt="fatherFn"
         />
     </div>
     <div class="box">
@@ -149,7 +150,7 @@ const evebtbus = () => {
     emitter.emit('eventbus', { age: 12 })
 }
 
-const emit = (data: number) => {
+const fatherFn = (data: number) => {
     console.log('接收到了子组件传过来的数据', data)
 }
 

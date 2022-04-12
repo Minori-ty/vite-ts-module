@@ -11,7 +11,7 @@ interface emitType {
 const emits = defineEmits<emitType>()
 
 const fn = () => {
-    emits('ws', '27')
+    emits('emits', 27)
 }
 </script>
 <style></style>
