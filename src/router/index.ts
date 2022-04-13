@@ -34,6 +34,11 @@ const router = createRouter({
             ],
         },
         {
+            path: '/canceltoken',
+            component: () => import('../components/cancelToken.vue'),
+            hidden: false,
+        },
+        {
             path: '/:pathMatch(.*)*',
             component: () => import('../components/404.vue'),
             hidden: false,
