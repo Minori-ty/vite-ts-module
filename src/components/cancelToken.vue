@@ -2,11 +2,21 @@
     <button @click="send">发送请求</button>
     <button @click="stop">取消请求</button>
     <button @click="message = {}">clear</button>
+    <div>{{ t }}</div>
     <div>{{ message }}</div>
 </template>
 <script setup lang="ts">
 import axios from 'axios'
-import { shallowRef } from 'vue'
+import { shallowRef, ref } from 'vue'
+import MyWorker from '../worker/webworker?worker'
+let t = ref(0)
+const worker = new MyWorker()
+worker.onmessage = e => {
+    console.log(e.data)
+    t.value = e.data
+}
+
+// document.body.style.backgroundColor = 'red'
 const message = shallowRef({})
 let cancel: null | (() => void)
 axios.interceptors.request.use(config => {
