@@ -1,5 +1,8 @@
 <template>
     <div class="box">
+        <CancelToken />
+    </div>
+    <div class="box">
         <cssModule></cssModule>
     </div>
     <div class="box">
@@ -11,7 +14,6 @@
     <div class="box">
         <store />
     </div>
-
     <router-link to="/user">user</router-link>
     <h1>{{ $filters.FormDate() }}</h1>
 
@@ -85,6 +87,9 @@
         <watch />
     </div>
     <div class="box">
+        <Computed />
+    </div>
+    <div class="box">
         <updateModel :count="num" @update:count="num = $event"></updateModel>
     </div>
 </template>
@@ -106,6 +111,7 @@ import defineProps from './defineProps.vue'
 import eventBus from './eventBus.vue'
 import watchEffect from './watchEffect.vue'
 import watch from './watch.vue'
+import Computed from './computed.vue'
 import store from './store.vue'
 import slots from './slots.vue'
 import tree from './tree'
@@ -117,6 +123,7 @@ import axios from 'axios'
 import { countKey } from '../type/inject'
 import Mock from 'mockjs'
 import updateModel from './updateModel.vue'
+import CancelToken from './cancelToken.vue'
 
 const slotscope = defineAsyncComponent(() => import('./slotscope.vue'))
 
