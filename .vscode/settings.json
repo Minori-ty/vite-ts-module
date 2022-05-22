@@ -4,7 +4,6 @@
     "editor.formatOnSave": true,
     "editor.suggest.snippetsPreventQuickSuggestions": false,
     "workbench.iconTheme": "vscode-icons",
-    "editor.renderIndentGuides": false,
     //  #去掉代码结尾的分号
     "prettier.semi": false,
     //  #使用带引号替代双引号
@@ -101,5 +100,6 @@
         "vue",
         "html",
         "typescriptreact"
-    ]
+    ],
+    "editor.guides.indentation": false
 }

@@ -1,7 +1,7 @@
 <template>
     <h1>defineProps</h1>
-    <h2>{{ msg }}</h2>
-    <h2>{{ vue }}</h2>
+    <h2>{{ props.form }}</h2>
+    <h2>{{ props.vue }}</h2>
     <h2>
         {{ `from: name: ${form.name} ---- age: ${form?.age}` }}
     </h2>
@@ -19,7 +19,7 @@ interface Form {
     age?: number
 }
 
-withDefaults(defineProps<Props>(), {
+const props = withDefaults(defineProps<Props>(), {
     vue: 'defineProps的默认值',
     form: () => {
         return {

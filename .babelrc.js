@@ -1,6 +1,7 @@
 module.exports = {
     presets: [
         [
+            '@vue/app',
             '@babel/preset-env',
             {
                 targets: {
@@ -8,6 +9,7 @@ module.exports = {
                 },
             },
         ],
+        '@babel/preset-typescript',
     ],
     plugins: ['@vue/babel-plugin-jsx'],
 }

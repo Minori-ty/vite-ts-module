@@ -1,8 +1,10 @@
+/// <reference types="vitest" />
 import { defineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
 import vueJsx from '@vitejs/plugin-vue-jsx'
 import { viteMockServe } from 'vite-plugin-mock'
-import test from './src/plugins/vite-plugin-test'
+// import test from './src/plugins/vite-plugin-test'
+// import { defineConfig } from 'vitest/config'
 
 // https://vitejs.dev/config/
 export default defineConfig({
@@ -13,7 +15,6 @@ export default defineConfig({
         viteMockServe({
             mockPath: 'mock',
         }),
-        test,
     ],
     resolve: {
         alias: {
@@ -37,6 +38,13 @@ export default defineConfig({
                 entryFileNames: 'js/[name]-[hash].js',
                 assetFileNames: '[ext]/[name]-[hash].[ext]',
             },
+        },
+    },
+    test: {
+        include: ['test/**/*.spec.ts'],
+        environment: 'jsdom',
+        deps: {
+            inline: ['@vue', '@vueuse', 'vue-demi'],
         },
     },
     // server: {
