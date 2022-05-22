@@ -1,5 +1,8 @@
 <template>
     <div class="box">
+        <CancelToken />
+    </div>
+    <div class="box">
         <cssModule></cssModule>
     </div>
     <div class="box">
@@ -11,7 +14,6 @@
     <div class="box">
         <store />
     </div>
-
     <router-link to="/user">user</router-link>
     <h1>{{ $filters.FormDate() }}</h1>
 
@@ -45,14 +47,14 @@
     </div>
 
     <div class="box">
-        <Test :tableData="tableData" :propList="propList">
+        <dynamicSlot :tableData="tableData" :propList="propList">
             <template #date="scope">
                 <el-button type="success">{{ scope.row.date }}</el-button>
             </template>
             <template #name="scope">
                 <el-button type="primary">{{ scope.row.name }}</el-button>
             </template>
-        </Test>
+        </dynamicSlot>
     </div>
 
     <div class="box">
@@ -66,12 +68,13 @@
         <Son ref="RefDom" />
     </div>
     <div class="box">
-        <defineEmits @emits="emit" />
+        <defineEmits @emits="fatherFn" />
     </div>
     <div class="box">
         <defineProps
             msg="父组件传给子组件的数据"
             :form="{ name: 'vue', age: 88 }"
+            :emt="fatherFn"
         />
     </div>
     <div class="box">
@@ -82,6 +85,12 @@
     </div>
     <div class="box">
         <watch />
+    </div>
+    <div class="box">
+        <Computed />
+    </div>
+    <div class="box">
+        <updateModel :count="num" @update:count="num = $event"></updateModel>
     </div>
 </template>
 
@@ -96,34 +105,35 @@ import {
 } from 'vue'
 import emitter from '../utils/eventbus'
 import inject from './inject.vue'
-import Son from './Ref.vue'
+import Son, { RefType } from './Ref.vue'
 import defineEmits from './defineEmits.vue'
 import defineProps from './defineProps.vue'
 import eventBus from './eventBus.vue'
 import watchEffect from './watchEffect.vue'
 import watch from './watch.vue'
+import Computed from './computed.vue'
 import store from './store.vue'
 import slots from './slots.vue'
 import tree from './tree'
-import Test from './dynamicSlot.vue'
+import dynamicSlot from './dynamicSlot.vue'
 import Table from './自己封装的动态插槽.vue'
 import pinia from './pinia.vue'
 import cssModule from './css-module.vue'
 import axios from 'axios'
 import { countKey } from '../type/inject'
 import Mock from 'mockjs'
+import updateModel from './updateModel.vue'
+import CancelToken from './cancelToken.vue'
 
 const slotscope = defineAsyncComponent(() => import('./slotscope.vue'))
 
-interface sonData {
-    fn: () => void
-    count: number
-}
+let num = ref(1)
 
-const sonRef = ref<InstanceType<typeof Son> & sonData>()
+const sonRef = ref<InstanceType<typeof Son> & RefType>()
 
 onMounted(() => {
     console.log(sonRef.value?.$el)
+    sonRef.value?.fn()
 })
 
 var arr = ref([1, 2, 3, 4, 5, 6])
@@ -147,7 +157,7 @@ const evebtbus = () => {
     emitter.emit('eventbus', { age: 12 })
 }
 
-const emit = (data: number) => {
+const fatherFn = (data: number) => {
     console.log('接收到了子组件传过来的数据', data)
 }
 
