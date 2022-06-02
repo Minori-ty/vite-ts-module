@@ -3,7 +3,7 @@ function fn<T extends object, K extends keyof T>(obj: T, key: K): T[K] {
 
     return obj[key]
 }
-fn({ name: 'dd', age: 4 }, 'age')
+fn({ name: 'dd', age: 4 }, 'name')
 
 type MyPick<T, K extends keyof T> = {
     [P in K]: T[P]
@@ -21,10 +21,8 @@ type F = keyof todo
 const a: F = 'complete'
 console.log(a, d)
 
-// const Arr = ['a', 'b', 'c'] as const
-// type arr = typeof Arr
-
-// type Tuple<T extends readonly string[]> = {
-//     [P in T[number]]: P
-// }
-// type r = Tuple<typeof Arr>
+function ob(obj: object, key: string) {
+    return obj[key as keyof typeof obj]
+}
+const obj = { name: 'ss' }
+ob(obj, 's')

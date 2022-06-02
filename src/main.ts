@@ -8,6 +8,7 @@ import { createPinia } from 'pinia'
 import './assets/css/global.css'
 import ElementPlus from 'element-plus'
 // import 'element-plus/dist/index.css'
+import '@purge-icons/generated'
 
 createApp(App)
     .use(store, key)

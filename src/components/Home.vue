@@ -1,4 +1,5 @@
 <template>
+    <img src="../assets/images/icons/logo.png" alt="" />
     <div class="box">
         <CancelToken />
     </div>

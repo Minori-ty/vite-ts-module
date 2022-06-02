@@ -9,7 +9,7 @@ import AppStyle from '../assets/css/App.module.css'
 <style module lang="scss">
 $color: red;
 .wrap {
-    color: $color;
     width: 200px;
+    color: $color;
 }
 </style>

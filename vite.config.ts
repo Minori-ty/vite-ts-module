@@ -1,10 +1,9 @@
-/// <reference types="vitest" />
 import { defineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
 import vueJsx from '@vitejs/plugin-vue-jsx'
 import { viteMockServe } from 'vite-plugin-mock'
 // import test from './src/plugins/vite-plugin-test'
-// import { defineConfig } from 'vitest/config'
+import PurgeIcons from 'vite-plugin-purge-icons'
 
 // https://vitejs.dev/config/
 export default defineConfig({
@@ -14,6 +13,9 @@ export default defineConfig({
         vueJsx(),
         viteMockServe({
             mockPath: 'mock',
+        }),
+        PurgeIcons({
+            content: ['**/*.html', '**/*.js', '**/*.vue'],
         }),
     ],
     resolve: {

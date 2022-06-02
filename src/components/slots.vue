@@ -8,7 +8,7 @@
         <slot name="right"> </slot>
     </div>
 </template>
-<script setup></script>
+<script setup lang="ts"></script>
 <style>
 #left {
     background-color: blue;
