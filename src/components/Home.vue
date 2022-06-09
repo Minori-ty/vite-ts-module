@@ -1,6 +1,9 @@
 <template>
     <img src="../assets/images/icons/logo.png" alt="" />
     <div class="box">
+        <webworker />
+    </div>
+    <div class="box">
         <CancelToken />
     </div>
     <div class="box">
@@ -96,6 +99,7 @@
 </template>
 
 <script lang="ts" setup>
+import webworker from './webworker.vue'
 import {
     ref,
     provide,

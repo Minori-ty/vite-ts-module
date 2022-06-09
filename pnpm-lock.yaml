@@ -2,30 +2,30 @@ lockfileVersion: 5.4
 
 specifiers:
   '@babel/core': 7.0.0
-  '@babel/preset-env': ^7.18.2
+  '@babel/preset-env': ^7.18.0
   '@babel/preset-typescript': ^7.17.12
-  '@commitlint/cli': ^16.3.0
-  '@commitlint/config-conventional': ^16.2.4
+  '@commitlint/cli': ^16.2.1
+  '@commitlint/config-conventional': ^16.2.1
   '@iconify/iconify': ^2.2.1
   '@iconify/json': ^2.1.55
   '@testing-library/dom': ^8.13.0
   '@testing-library/jest-dom': ^5.16.4
   '@testing-library/user-event': ^14.2.0
   '@testing-library/vue': ^5.8.3
-  '@types/jest': ^27.5.2
+  '@types/jest': ^27.5.1
   '@types/lodash-es': '*'
-  '@typescript-eslint/eslint-plugin': ^5.27.0
-  '@typescript-eslint/parser': ^5.27.0
-  '@vitejs/plugin-vue': ^2.3.3
-  '@vitejs/plugin-vue-jsx': ^1.3.10
-  '@vue/babel-plugin-jsx': ^1.1.1
+  '@typescript-eslint/eslint-plugin': ^5.12.0
+  '@typescript-eslint/parser': ^5.12.0
+  '@vitejs/plugin-vue': ^2.2.0
+  '@vitejs/plugin-vue-jsx': ^1.3.3
+  '@vue/babel-plugin-jsx': ^1.0.7
   '@vue/babel-preset-app': ^5.0.4
-  '@vue/compiler-sfc': ^3.2.36
+  '@vue/compiler-sfc': ^3.2.26
   '@vue/eslint-config-prettier': ^7.0.0
   '@vue/eslint-config-typescript': ^10.0.0
-  '@vue/test-utils': ^2.0.0
+  '@vue/test-utils': ^2.0.0-rc.18
   '@vue/tsconfig': ^0.1.3
-  axios: ^0.26.1
+  axios: ^0.26.0
   babel-core: ^6.26.3
   babel-eslint: ^10.1.0
   babel-jest: ^28.1.0
@@ -33,40 +33,40 @@ specifiers:
   commitizen: ^4.2.4
   cz-conventional-changelog: ^3.3.0
   cz-customizable: ^6.3.0
-  dayjs: ^1.11.2
-  element-plus: ^2.2.2
-  eslint: ^8.16.0
-  eslint-config-prettier: ^8.5.0
+  dayjs: ^1.10.8
+  element-plus: ^2.0.2
+  eslint: ^8.9.0
+  eslint-config-prettier: ^8.3.0
   eslint-plugin-prettier: 4.0.0
-  eslint-plugin-vue: ^8.7.1
-  husky: ^7.0.4
+  eslint-plugin-vue: ^8.4.1
+  husky: ^7.0.2
   jest: ^28.1.0
   jsdom: ^19.0.0
-  lint-staged: ^12.5.0
+  lint-staged: ^12.3.4
   mitt: ^3.0.0
   mockjs: ^1.1.0
-  pinia: ^2.0.14
-  postcss: ^8.4.14
-  postcss-html: ^1.4.1
-  prettier: ^2.6.2
-  rollup: ^2.75.5
-  sass: ^1.52.1
-  stylelint: ^14.8.5
+  pinia: ^2.0.8
+  postcss: ^8.4.6
+  postcss-html: ^1.3.0
+  prettier: ^2.4.1
+  rollup: '>=2.42.0 <3.0.0'
+  sass: ^1.47.0
+  stylelint: ^14.5.0
   stylelint-config-html: ^1.0.0
   stylelint-config-recommended-scss: ^5.0.2
-  stylelint-config-recommended-vue: ^1.4.0
+  stylelint-config-recommended-vue: ^1.3.0
   stylelint-config-standard: ^25.0.0
   stylelint-config-standard-scss: ^3.0.0
   stylelint-order: ^5.0.0
-  ts-jest: ^28.0.3
-  typescript: ^4.7.2
+  ts-jest: ^28.0.2
+  typescript: ^4.4.3
   vite: ^2.9.9
   vite-plugin-mock: ^2.9.6
   vite-plugin-purge-icons: ^0.8.1
-  vitest: ^0.12.10
+  vitest: ^0.12.8
   vue: ^3.2.36
   vue-jest: ^3.0.7
-  vue-router: ^4.0.15
+  vue-router: ^4.0.11
   vue-template-compiler: ^2.6.14
   vue-tsc: ^0.31.4
   vuex: ^4.0.2
@@ -2947,7 +2947,7 @@ packages:
     dev: true
 
   /@nodelib/fs.scandir/2.1.5:
-    resolution: {integrity: sha512-vq24Bq3ym5HEQm2NKCr3yXDwjc7vTsEThRDnkp2DK9p1uqLR+DHurm/NOTo0KG7HYHU7eppKZj3MyqYuMBf62g==}
+    resolution: {integrity: sha1-dhnC6yGyVIP20WdUi0z9WnSIw9U=, tarball: '@nodelib/fs.scandir/download/@nodelib/fs.scandir-2.1.5.tgz'}
     engines: {node: '>= 8'}
     dependencies:
       '@nodelib/fs.stat': 2.0.5
@@ -4829,7 +4829,7 @@ packages:
     dev: true
 
   /concat-map/0.0.1:
-    resolution: {integrity: sha512-/Srv4dswyQNBfohGpz9o6Yb3Gz3SrUDqBH5rTuhGR7ahtlbYKnVxw2bCFMRljaA7EXHaXZ8wsHdodFvbkhKmqg==}
+    resolution: {integrity: sha1-2Klr13/Wjfd5OnMDajug1UBdR3s=, tarball: concat-map/download/concat-map-0.0.1.tgz}
     dev: true
 
   /condense-newlines/0.2.1:
@@ -7720,7 +7720,7 @@ packages:
     dev: true
 
   /minimist-options/4.1.0:
-    resolution: {integrity: sha512-Q4r8ghd80yhO/0j1O3B2BjweX3fiHg9cdOwjJd2J76Q135c+NDxGCqdYKQ1SKBuFfgWbAUzBfvYjPUEeNgqN1A==}
+    resolution: {integrity: sha1-wGVXE8U6ii69d/+iR9NCxA8BBhk=, tarball: minimist-options/download/minimist-options-4.1.0.tgz}
     engines: {node: '>= 6'}
     dependencies:
       arrify: 1.0.1
@@ -7755,11 +7755,11 @@ packages:
     dev: true
 
   /ms/2.0.0:
-    resolution: {integrity: sha512-Tpp60P6IUJDTuOq/5Z8cdskzJujfwqfOTkrwIwj7IRISpnkJnT6SyJ4PCPnGMoFjC9ddhal5KVIYtAt97ix05A==}
+    resolution: {integrity: sha1-VgiurfwAvmwpAd9fmGF4jeDVl8g=, tarball: ms/download/ms-2.0.0.tgz}
     dev: true
 
   /ms/2.1.2:
-    resolution: {integrity: sha512-sGkPx+VjMtmA6MX27oA4FBFELFCZZ4S4XqeGOXCv68tT+jb3vk/RyaKWP0PTKyWtmLSM0b+adUTEvbs1PEaH2w==}
+    resolution: {integrity: sha1-0J0fNXtEP0kzgqjrPM0YOHKuYAk=, tarball: ms/download/ms-2.1.2.tgz}
     dev: true
 
   /ms/2.1.3:
@@ -8539,7 +8539,7 @@ packages:
     dev: true
 
   /resolve-global/1.0.0:
-    resolution: {integrity: sha512-zFa12V4OLtT5XUX/Q4VLvTfBf+Ok0SPc1FNGM/z9ctUdiU618qwKpWnd0CHs3+RqROfyEg/DhuHbMWYqcgljEw==}
+    resolution: {integrity: sha1-oqed9K8so/Sb93753azTItrRklU=, tarball: resolve-global/download/resolve-global-1.0.0.tgz}
     engines: {node: '>=8'}
     dependencies:
       global-dirs: 0.1.1
@@ -10098,7 +10098,7 @@ packages:
     dev: true
 
   /yn/3.1.1:
-    resolution: {integrity: sha512-Ux4ygGWsu2c7isFWe8Yu1YluJmqVhxqK2cLXNQA5AcC3QfbGNpM7fu0Y8b/z16pXLnFxZYvWhd3fhBY9DLmC6Q==}
+    resolution: {integrity: sha1-HodAGgnXZ8HV6rJqbkwYUYLS61A=, tarball: yn/download/yn-3.1.1.tgz}
     engines: {node: '>=6'}
     dev: true
 

@@ -2,7 +2,8 @@
     <button @click="send">发送请求</button>
     <button @click="stop">取消请求</button>
     <button @click="message = {}">clear</button>
-    <div>{{ t }}</div>
+    <h1>worker</h1>
+    <div>update webworker {{ t }}</div>
     <div>{{ message }}</div>
 </template>
 <script setup lang="ts">
@@ -12,7 +13,7 @@ import MyWorker from '../worker/webworker?worker'
 let t = ref(0)
 const worker = new MyWorker()
 worker.onmessage = e => {
-    console.log(e.data)
+    console.log('update webworker ', e.data)
     t.value = e.data
 }
 
