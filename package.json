@@ -4,7 +4,8 @@
     "scripts": {
         "dev": "vite --open",
         "build": "vite build",
-        "serve": "vite preview --open",
+        "preview": "vite preview --open",
+        "prepare": "husky install",
         "lint": "eslint \"src/**/*.{js,vue,tsx,ts}\"",
         "test": "vitest --coverage"
     },

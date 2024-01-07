@@ -24,13 +24,6 @@ export default defineConfig({
         },
     },
     build: {
-        terserOptions: {
-            compress: {
-                //生产环境时移除console
-                drop_console: true,
-                drop_debugger: true,
-            },
-        },
         // 取消计算文件大小，加快打包速度
         reportCompressedSize: false,
         sourcemap: true,
@@ -41,6 +34,14 @@ export default defineConfig({
                 assetFileNames: '[ext]/[name]-[hash].[ext]',
             },
         },
+    },
+    esbuild: {
+        pure: ['console.log'],
+        drop: ['debugger'],
+    },
+    define: {
+        // 启用生产环境构建下激活不匹配的详细警告
+        __VUE_PROD_HYDRATION_MISMATCH_DETAILS__: 'true',
     },
     test: {
         include: ['test/**/*.spec.ts'],
