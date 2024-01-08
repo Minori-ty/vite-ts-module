@@ -13,24 +13,10 @@
     //  #让函数(名)和后面的括号之间加个空格
     "javascript.format.insertSpaceBeforeFunctionParenthesis": true,
     "powermode.enabled": true,
-    "powermode.shakeIntensity": 0,
+    "powermode.shake.intensity": 0,
     "files.associations": {
         "*.html": "html"
     },
-    "background.customImages": ["C:/Users/15638/.vscode/extensions/58.png"],
-    "background.style": {
-        "content": "''",
-        "pointer-events": "none",
-        "position": "absolute",
-        "z-index": "99999",
-        "width": "100%",
-        "height": "100%",
-        "background-position": "40% 0%",
-        "background-size": "cover",
-        "background-repeat": "no-repeat",
-        "opacity": 0.1
-    },
-    "background.useDefault": false,
     "explorer.confirmDelete": false,
     "explorer.confirmDragAndDrop": false,
     "[jsonc]": {
@@ -51,17 +37,11 @@
     },
     "editor.minimap.enabled": false,
     "editor.renderWhitespace": "all",
-    "vetur.ignoreProjectWarning": true,
     "workbench.startupEditor": "newUntitledFile",
     "liveServer.settings.donotShowInfoMsg": true,
     "workbench.sideBar.location": "right",
     "editor.fontFamily": "Fira Code",
     "editor.fontLigatures": true,
-    "bracketPairColorizer.activeScopeCSS": [
-        "borderStyle : solid",
-        "borderWidth : 1px",
-        "borderColor : {color}; opacity: 0.5"
-    ],
     "[json]": {
         "editor.defaultFormatter": "esbenp.prettier-vscode"
     },
@@ -72,7 +52,6 @@
         "source.fixAll.eslint": "explicit",
         "source.fixAll.stylelint": "explicit"
     },
-    "dart.checkForSdkUpdates": false,
     "stylelint.enable": true,
     "typescript.suggest.paths": true,
     "eslint.options": {
@@ -85,7 +64,6 @@
             }
         }
     },
-    "volar.checkVueTscVersion": false,
     "gutterpreview.sourceFolder": "./src/assets",
     "npm.enableRunFromFolder": true,
     "breadcrumbs.enabled": false,
@@ -101,5 +79,6 @@
         "html",
         "typescriptreact"
     ],
-    "editor.guides.indentation": false
+    "editor.guides.indentation": false,
+    "stylelint.configFile": ".stylelintrc.js"
 }

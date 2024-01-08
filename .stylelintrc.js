@@ -1,11 +1,13 @@
 module.exports = {
     extends: [
         'stylelint-config-standard',
-        'stylelint-config-html/vue',
         'stylelint-config-standard-scss',
         'stylelint-config-recommended-vue/scss',
+        'stylelint-config-html/vue',
+        'stylelint-config-recommended-vue',
     ],
     plugins: ['stylelint-order'],
+    customSyntax: 'postcss-html',
     rules: {
         'no-descending-specificity': null,
         'function-url-quotes': 'always',
