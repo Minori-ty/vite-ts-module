@@ -4,10 +4,12 @@
     <span class="iconify" data-icon="material-symbols:search"></span>
     <span class="iconify" data-icon="akar-icons:search"></span>
     <router-view></router-view>
+    <HW />
 </template>
 
 <script lang="ts" setup>
 import { ref } from 'vue'
+import HW from '@/components/computed.vue'
 
 /** 测试 */
 const data = ref('')
